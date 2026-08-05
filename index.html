@@ -4,198 +4,311 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Resume</title>
+    <style>
+      #other {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+        row-gap: 0.5rem;
+        align-items: start;
+      }
+
+      #other > h2 {
+        grid-column: 1 / -1;
+      }
+
+      #other > hr {
+        display: none;
+      }
+
+      @media (max-width: 600px) {
+        #other {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>Logesh kannan C</h1>
-    <img src="./IMG-20231026-WA0003.jpg" alt="My profile photo" height="150" />
-    <h2>Full Stack Developer</h2>
+    <header>
+      <h1>Logesh kannan C</h1>
+      <img
+        src="./IMG-20231026-WA0003.jpg"
+        alt="My profile photo"
+        height="150"
+      />
+      <h2>Full Stack Developer</h2>
+    </header>
     <hr />
-    <h2>Summary</h2>
-    <p>
-      To work in an organization that provides me ample opportunities to enhance
-      my skills and knowledge along with contributing to the growth of the
-      organization.
-    </p>
-    <hr />
-    <h2>Education</h2>
-    <ul>
-      <li>
-        MCA(Master Of Computer Application) - Rathinam Technical campus,<br />
-        Coimbatore.<br />
-        72% (2023 — 2025).
-      </li>
-      <br />
-      <li>
-        B.Sc(Computer Science) - Ayya Nadar Janaki Ammal College,<br />
-        Sivakasi.<br />
-        72% (2020 — 2023).
-      </li>
-      <br />
-      <li>
-        HSC - Nadar Matriculation Higher Secondary Schhol,<br />
-        Rajapalayam. <br />67% (2018 — 2020).
-      </li>
-      <br />
-      <li>
-        SSLC-Sri vaiyapuri vidyalaya Matric Higher Secondary School,<br />
-        Sankarankovil. <br />73% (2017 — 2018).
-      </li>
-    </ul>
-    <hr />
-    <h2>Work experience</h2>
-    <ul>
-      <li>
-        Quiz project
-        <ul>
-          <li>I am doing a quiz project in full-stack.</li>
-          <li>
-            In full-stack web development and I will build both the client-side
-            (frontend) and server-side (backend) of a web application, requiring
-            knowledge of technologies like HTML, CSS, JavaScript, and various
-            backend languages like Node.js,Express Js and various Database
-            language like MYSQL.
-          </li>
-        </ul>
-      </li>
-      <li>
-        Sample web page
-        <ul>
-          <li>
-            I am doing a sample web page in full stack that include
-            Home,courses,contact us,about pages.
-          </li>
-          <li>
-            In full-stack web development and I will build both the client-side
-            (frontend) and server-side (backend) of a web application, requiring
-            knowledge of technologies like HTML, CSS, JavaScript, and various
-            backend languages like Node.js,Express Js and various Database
-            language like MYSQL.
-          </li>
-        </ul>
-      </li>
-      <li>
-        Shop Expenses web page
-        <ul>
-          <li>
-            I am creating a web page in full stack that includes a login page
-            that has Google and faceBook authentication, then the user login
-            field and also the registration page. Once logged in, go to the home
-            page including Vonder Bills, Data Management, LogOut. The Vondoe
-            Bills have created a Bill and viewed the Vonder Bills. The Data
-            Management page has material, vonder. The material and vendor page
-            has to view, edit, update, and delete the items it has used only the
-            adim and manager. Ect...
-          </li>
-          <li>
-            In full-stack web development, I will build both the client-side
-            (frontend) and server-side (backend) of a web application, requiring
-            Knowledge of technologies like HTML, CSS, JavaScript, and various
-            Backend languages like Node.js,Express.js and various databases
-            languages like MYSQL and MongoDB. MYSQL has been fetched the data
-            from the client, then MongoDB has been store the request/response
-            the recode.
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <hr />
-    <h2>Skills</h2>
-    <ul>
-      <li>Team Work ⭐⭐⭐⭐</li>
-      <li>Quick Learning ⭐⭐⭐⭐</li>
-      <li>Communication skills ⭐⭐⭐⭐</li>
-      <li>Leadership qualities⭐⭐⭐⭐</li>
-    </ul>
-    <hr />
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Bootstrap</li>
-      <li>Node JS</li>
-      <li>Express JS</li>
-      <li>React Js</li>
-      <li>MYSQL</li>
-      <li>MongoDB</li>
-    </ul>
-    <hr />
-    <h2>Achievements</h2>
-    <ul>
-      <li>Finish Marathan(12.5km) .</li>
-    </ul>
-    <hr />
-    <h2>Certifications</h2>
-    <ul>
-      <li>ASKEVA WhatsApp API Based Chatbot Workshop.</li>
-      <li>
-        All India Council for Technical Education. (Heartfulness Education Trust
-        in Kanha Shanti Vanam).
-      </li>
-      <li>TCS ION Career Edge-Young Professional.</li>
-      <li>India @75 Quiz Contest.</li>
-      <li>
-        7"International Conference on Smart Technologies and Innovations in
-        Education and Research - (STIER - 2025) held during April 11 & 12,2025.
-      </li>
-    </ul>
-    <hr />
-    <h2>Other</h2>
-    <ul>
-      <li>
-        <h3>Languages</h3>
-        <ul>
-          <li>Tamil</li>
-          <li>English</li>
-        </ul>
-        <hr />
-      </li>
-      <li>
-        <h3>Hobbies</h3>
-        <ul>
-          <li>Playing Cricket.</li>
-          <li>Traveling.</li>
-          <li>Watching Movie.</li>
-          <li>cycling.</li>
-        </ul>
-        <hr />
-      </li>
-      <li>
-        <h3>Contact Me</h3>
-        <p>Tel: 6385841491</p>
-        <p>Email: kannanlogeshkannan29@gmail.com</p>
-        <p>Address:</p>
+
+    <main>
+      <section>
+        <h2>Summary</h2>
         <p>
-          204G/10 Railway feeder road,<br />
-          Asilapuram,<br />
-          city:Rajapalayam, <br />
-          Country:India,<br />
-          pincode:626139.<br />
+          To work in an organization that provides me ample opportunities to
+          enhance my skills and knowledge along with contributing to the growth
+          of the organization.
         </p>
+      </section>
+      <hr />
+
+      <section>
+        <h2>Education</h2>
+        <ul>
+          <li>
+            MCA(Master Of Computer Application) - Rathinam Technical campus,<br />
+            Coimbatore.<br />
+            72% (2023 — 2025).
+          </li>
+          <li>
+            B.Sc(Computer Science) - Ayya Nadar Janaki Ammal College,<br />
+            Sivakasi.<br />
+            72% (2020 — 2023).
+          </li>
+          <li>
+            HSC - Nadar Matriculation Higher Secondary Schhol,<br />
+            Rajapalayam. <br />67% (2018 — 2020).
+          </li>
+          <li>
+            SSLC-Sri vaiyapuri vidyalaya Matric Higher Secondary School,<br />
+            Sankarankovil. <br />73% (2017 — 2018).
+          </li>
+        </ul>
+      </section>
+      <hr />
+
+      <section class="projects">
+        <h2>Projects</h2>
+
+        <article>
+          <h3>Movie Management App (Full-Stack, MERN)</h3>
+          <ul>
+            <li>
+              Full-stack movie management application with JWT-based
+              authentication (signup/login), protected routes, and complete CRUD
+              operations for movies.
+            </li>
+            <li>
+              Frontend built with React (Vite) and React Router, using Context
+              API for auth state, reusable components (Navbar, MovieCard,
+              MovieForm, ConfirmDialog, Loader), and a dedicated service layer
+              for API calls.
+            </li>
+            <li>
+              Backend built with Node.js, Express, and MongoDB (Mongoose), with
+              bcrypt password hashing and JWT-protected routes.
+            </li>
+            <li>
+              Automated testing on both ends: Vitest and React Testing Library
+              on the frontend; Jest, Supertest, and mongodb-memory-server on the
+              backend.
+            </li>
+          </ul>
+        </article>
+        <br />
+
+        <article>
+          <h3>Weather App (React)</h3>
+          <ul>
+            <li>
+              React (Vite) application that fetches and displays live weather
+              data for any searched city using geolocation and a weather API.
+            </li>
+            <li>
+              Displays temperature, wind speed, wind direction, and local time,
+              with dedicated loading and error states.
+            </li>
+            <li>
+              Built with reusable components: SearchBar, WeatherCard,
+              LoadingSpinner, and ErrorMessage.
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Developer Life Management System (DLMS) — Capstone Project</h3>
+          <ul>
+            <li>
+              A single secure dashboard unifying Tasks, Notes, Bookmarks, Study
+              Progress, and Project Ideas into one full-stack MERN application.
+            </li>
+            <li>
+              Backend: Node.js, Express 5, MongoDB Atlas with Mongoose, JWT +
+              bcrypt authentication, express-validator input validation, and
+              strict per-user data isolation enforced on every query.
+            </li>
+            <li>
+              Frontend: React 19, Vite, React Router v7, and Axios, with a
+              Context API-based auth flow and protected routes.
+            </li>
+            <li>
+              Feature highlights: due-date locking on tasks once set,
+              confirm-before-complete workflow, study progress percentage
+              auto-calculated server-side from subtopic checklists, note
+              pinning, and searchable/filterable bookmarks and project ideas.
+            </li>
+            <li>
+              Fully covered by automated test suites (Jest and Supertest on the
+              backend; Vitest, React Testing Library, and MSW on the frontend)
+              with CI pipelines on both backend and frontend via GitHub Actions.
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Quiz Project</h3>
+          <ul>
+            <li>
+              Full-stack quiz application covering both the client-side and
+              server-side of the app.
+            </li>
+            <li>
+              Client side built with HTML, CSS, and JavaScript; backend built
+              with Node.js and Express.js, using MySQL as the database.
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Shop Expenses Web Page</h3>
+          <ul>
+            <li>
+              Full-stack shop expense management web application with a login
+              page supporting Google and Facebook authentication, alongside
+              standard user login and registration.
+            </li>
+            <li>
+              After login, users reach a home page with Vendor Bills, Data
+              Management, and Logout. Vendor Bills lets users create and view
+              vendor bills; Data Management covers material and vendor records,
+              with view, edit, update, and delete access restricted to admin and
+              manager roles.
+            </li>
+            <li>
+              Backend built with Node.js and Express.js: MySQL fetches data from
+              the client, while MongoDB stores the request/response records.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <hr />
+
+      <section>
+        <h2>Skills</h2>
+        <ul>
+          <li>Team Work ⭐⭐⭐⭐</li>
+          <li>Quick Learning ⭐⭐⭐⭐</li>
+          <li>Communication skills ⭐⭐⭐⭐</li>
+          <li>Leadership qualities⭐⭐⭐⭐</li>
+        </ul>
+      </section>
+      <hr />
+
+      <section>
+        <h2>Technical Skills</h2>
+        <ul>
+          <li>HTML, CSS, JavaScript (ES6+)</li>
+          <li>React JS (Hooks, Context API, React Router)</li>
+          <li>Node.js, Express JS</li>
+          <li>MongoDB, Mongoose (MongoDB Atlas)</li>
+          <li>JWT Authentication &amp; bcrypt</li>
+          <li>REST API Design</li>
+          <li>Axios</li>
+          <li>express-validator</li>
+          <li>Vite</li>
+          <li>
+            Testing: Jest, Supertest, Vitest, React Testing Library, MSW,
+            mongodb-memory-server
+          </li>
+          <li>Git, GitHub &amp; GitHub Actions (CI/CD)</li>
+        </ul>
+      </section>
+      <hr />
+
+      <section>
+        <h2>Achievements</h2>
+        <ul>
+          <li>Finish Marathan(12.5km) .</li>
+        </ul>
+      </section>
+      <hr />
+
+      <section>
+        <h2>Certifications</h2>
+        <ul>
+          <li>ASKEVA WhatsApp API Based Chatbot Workshop.</li>
+          <li>
+            All India Council for Technical Education. (Heartfulness Education
+            Trust in Kanha Shanti Vanam).
+          </li>
+          <li>TCS ION Career Edge-Young Professional.</li>
+          <li>India @75 Quiz Contest.</li>
+          <li>
+            7"International Conference on Smart Technologies and Innovations in
+            Education and Research - (STIER - 2025) held during April 11 &
+            12,2025.
+          </li>
+        </ul>
+      </section>
+      <hr />
+
+      <section id="other">
+        <h2>Other</h2>
+
+        <section>
+          <h3>Languages</h3>
+          <ul>
+            <li>Tamil</li>
+            <li>English</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Hobbies</h3>
+          <ul>
+            <li>Playing Cricket.</li>
+            <li>Traveling.</li>
+            <li>Watching Movie.</li>
+            <li>cycling.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Contact Me</h3>
+          <p>Tel: 6385841491</p>
+          <p>Email: kannanlogeshkannan29@gmail.com</p>
+          <p>Address:</p>
+          <p>
+            204G/10 Railway feeder road,<br />
+            Asilapuram,<br />
+            city:Rajapalayam, <br />
+            Country:India,<br />
+            pincode:626139.<br />
+          </p>
+        </section>
         <hr />
-      </li>
-      <li>
-        <h3>Portfolio</h3>
-        <a href=" https://logeshkannan-hub123.github.io/Professional-portfolio/"
-          >https://logeshkannan-hub123.github.io/Professional-portfolio/</a
-        >
-        <hr />
-      </li>
-      <li>
-        <h3>linkedin</h3>
-        <a href="http://www.linkedin.com/in/logesh-kannan-b9861032a">
-          http://www.linkedin.com/in/logesh-kannan-b9861032a</a
-        >
-        <hr />
-      </li>
-      <li>
-        <h3>github</h3>
-        <a href="https://github.com/logeshkannan-hub123/">
-          https://github.com/logeshkannan-hub123/</a
-        >
-        <hr />
-      </li>
-    </ul>
+
+        <section>
+          <h3>Portfolio</h3>
+          <a href="https://logesh-portfolio-gamma.vercel.app/"
+            >https://logesh-portfolio-gamma.vercel.app/</a
+          >
+          <hr />
+
+          <h3>linkedin</h3>
+          <a href="http://www.linkedin.com/in/logesh-kannan-b9861032a">
+            http://www.linkedin.com/in/logesh-kannan-b9861032a</a
+          >
+          <hr />
+
+          <h3>github</h3>
+          <a href="https://github.com/logeshkannan-hub123/">
+            https://github.com/logeshkannan-hub123/</a
+          >
+        </section>
+      </section>
+    </main>
+
+    <hr />
     <footer>
       <p>© 2025 Logesh Kannan Resume. All Rights Reserved.</p>
     </footer>
