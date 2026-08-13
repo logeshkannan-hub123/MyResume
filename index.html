@@ -3,314 +3,678 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Resume</title>
+    <title>Logesh Kannan C — Resume</title>
+    <meta
+      name="description"
+      content="Resume of Logesh Kannan C, Full Stack Developer (MERN)."
+    />
     <style>
-      #other {
+      :root {
+        --navy: #10213f;
+        --navy-light: #1c3560;
+        --accent: #2563eb;
+        --accent-light: #dbeafe;
+        --text: #1f2937;
+        --muted: #5b6472;
+        --bg-sidebar: #f3f5f9;
+        --border: #e2e6ee;
+        --radius: 6px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Calibri, Roboto, Helvetica, Arial, sans-serif;
+        color: var(--text);
+        background: #e9edf3;
+        line-height: 1.5;
+        font-size: 15px;
+      }
+
+      .resume {
+        max-width: 900px;
+        margin: 2rem auto;
+        background: #fff;
+        box-shadow: 0 4px 24px rgba(16, 33, 63, 0.12);
+      }
+
+      /* ---------- Header ---------- */
+      header {
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+        background: linear-gradient(135deg, var(--navy), var(--navy-light));
+        color: #fff;
+        padding: 2rem 2.25rem;
+      }
+
+      header img {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid rgba(255, 255, 255, 0.6);
+        flex-shrink: 0;
+      }
+
+      .heading h1 {
+        margin: 0 0 0.15rem;
+        font-size: 2rem;
+        letter-spacing: 0.02em;
+      }
+
+      .heading .role {
+        margin: 0 0 0.9rem;
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: var(--accent-light);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .contact-inline {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 1.4rem;
+        font-size: 0.88rem;
+      }
+
+      .contact-inline a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .contact-inline a:hover {
+        text-decoration: underline;
+      }
+
+      /* ---------- Layout ---------- */
+      .resume-body {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 3rem;
-        row-gap: 0.5rem;
-        align-items: start;
+        grid-template-columns: 260px 1fr;
       }
 
-      #other > h2 {
-        grid-column: 1 / -1;
+      aside.sidebar {
+        background: var(--bg-sidebar);
+        padding: 1.75rem 1.5rem;
+        border-right: 1px solid var(--border);
       }
 
-      #other > hr {
-        display: none;
+      main {
+        padding: 1.75rem 2rem;
       }
 
-      @media (max-width: 600px) {
-        #other {
+      /* ---------- Section headings ---------- */
+      .sidebar h3,
+      main h2 {
+        margin: 0 0 0.75rem;
+        color: var(--navy);
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        border-bottom: 2px solid var(--accent);
+        padding-bottom: 0.35rem;
+      }
+
+      main h2 {
+        font-size: 1.05rem;
+      }
+
+      .side-section {
+        margin-bottom: 1.75rem;
+      }
+
+      .side-section:last-child {
+        margin-bottom: 0;
+      }
+
+      main section {
+        margin-bottom: 1.75rem;
+      }
+
+      main section:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ---------- Sidebar content ---------- */
+      .side-section ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .side-section li {
+        margin-bottom: 0.55rem;
+      }
+
+      .edu-item .degree {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .edu-item .school,
+      .edu-item .score {
+        display: block;
+        font-size: 0.83rem;
+        color: var(--muted);
+      }
+
+      .contact-list li {
+        font-size: 0.86rem;
+        word-break: break-word;
+      }
+
+      .contact-list a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .contact-list a:hover {
+        color: var(--accent);
+        text-decoration: underline;
+      }
+
+      .link-list a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.88rem;
+        font-weight: 600;
+      }
+
+      .link-list a:hover {
+        text-decoration: underline;
+      }
+
+      .skill-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.87rem;
+      }
+
+      .meter {
+        --level: 4;
+        --max: 5;
+        position: relative;
+        width: 72px;
+        height: 7px;
+        border-radius: 4px;
+        background: var(--border);
+        flex-shrink: 0;
+      }
+
+      .meter::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: calc(var(--level) / var(--max) * 100%);
+        background: var(--accent);
+        border-radius: 4px;
+      }
+
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      .pill {
+        background: #fff;
+        border: 1px solid var(--border);
+        color: var(--navy);
+        font-size: 0.78rem;
+        font-weight: 600;
+        padding: 0.28rem 0.6rem;
+        border-radius: 999px;
+      }
+
+      .cert-list li,
+      .achieve-list li {
+        font-size: 0.85rem;
+      }
+
+      /* ---------- Main content ---------- */
+      .summary-text {
+        margin: 0;
+        color: var(--text);
+        font-size: 0.95rem;
+      }
+
+      .project-card {
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--accent);
+        border-radius: var(--radius);
+        padding: 1rem 1.1rem;
+        margin-bottom: 1rem;
+        break-inside: avoid;
+      }
+
+      .project-card:last-child {
+        margin-bottom: 0;
+      }
+
+      .project-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1rem;
+        color: var(--navy);
+      }
+
+      .project-card ul {
+        margin: 0;
+        padding-left: 1.1rem;
+      }
+
+      .project-card li {
+        margin-bottom: 0.32rem;
+        font-size: 0.89rem;
+      }
+
+      .project-card li:last-child {
+        margin-bottom: 0;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 0.78rem;
+        color: var(--muted);
+        padding: 1rem;
+        border-top: 1px solid var(--border);
+      }
+
+      /* ---------- Responsive (screen only — must not affect print) ---------- */
+      @media screen and (max-width: 720px) {
+        .resume {
+          margin: 0;
+        }
+
+        header {
+          flex-direction: column;
+          text-align: center;
+          padding: 1.75rem 1.25rem;
+        }
+
+        .contact-inline {
+          justify-content: center;
+        }
+
+        .resume-body {
           grid-template-columns: 1fr;
+        }
+
+        aside.sidebar {
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+        }
+      }
+
+      /* ---------- Print ---------- */
+      @page {
+        size: A4;
+        margin: 10mm 12mm;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+          font-size: 13px;
+        }
+
+        .resume {
+          margin: 0;
+          box-shadow: none;
+          max-width: 100%;
+        }
+
+        header {
+          flex-direction: row;
+          text-align: left;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .contact-inline {
+          justify-content: flex-start;
+        }
+
+        .resume-body {
+          display: grid;
+          grid-template-columns: 260px 1fr;
+        }
+
+        aside.sidebar {
+          border-right: 1px solid var(--border);
+          border-bottom: none;
+        }
+
+        .project-card {
+          break-inside: avoid;
+        }
+
+        .edu-item,
+        .side-section {
+          break-inside: avoid;
         }
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Logesh kannan C</h1>
-      <img
-        src="./IMG-20231026-WA0003.jpg"
-        alt="My profile photo"
-        height="150"
-      />
-      <h2>Full Stack Developer</h2>
-    </header>
-    <hr />
-
-    <main>
-      <section>
-        <h2>Summary</h2>
-        <p>
-          To work in an organization that provides me ample opportunities to
-          enhance my skills and knowledge along with contributing to the growth
-          of the organization.
-        </p>
-      </section>
-      <hr />
-
-      <section>
-        <h2>Education</h2>
-        <ul>
-          <li>
-            MCA(Master Of Computer Application) - Rathinam Technical campus,<br />
-            Coimbatore.<br />
-            72% (2023 — 2025).
-          </li>
-          <li>
-            B.Sc(Computer Science) - Ayya Nadar Janaki Ammal College,<br />
-            Sivakasi.<br />
-            72% (2020 — 2023).
-          </li>
-          <li>
-            HSC - Nadar Matriculation Higher Secondary Schhol,<br />
-            Rajapalayam. <br />67% (2018 — 2020).
-          </li>
-          <li>
-            SSLC-Sri vaiyapuri vidyalaya Matric Higher Secondary School,<br />
-            Sankarankovil. <br />73% (2017 — 2018).
-          </li>
-        </ul>
-      </section>
-      <hr />
-
-      <section class="projects">
-        <h2>Projects</h2>
-
-        <article>
-          <h3>Movie Management App (Full-Stack, MERN)</h3>
-          <ul>
+    <div class="resume">
+      <header>
+        <img src="./IMG-20231026-WA0003.jpg" alt="Logesh Kannan C" />
+        <div class="heading">
+          <h1>Logesh Kannan C</h1>
+          <p class="role">Full Stack Developer</p>
+          <ul class="contact-inline">
+            <li>Rajapalayam, Tamil Nadu, India</li>
+            <li><a href="tel:+916385841491">+91 63858 41491</a></li>
             <li>
-              Full-stack movie management application with JWT-based
-              authentication (signup/login), protected routes, and complete CRUD
-              operations for movies.
+              <a href="mailto:kannanlogeshkannan29@gmail.com"
+                >kannanlogeshkannan29@gmail.com</a
+              >
             </li>
             <li>
-              Frontend built with React (Vite) and React Router, using Context
-              API for auth state, reusable components (Navbar, MovieCard,
-              MovieForm, ConfirmDialog, Loader), and a dedicated service layer
-              for API calls.
+              <a href="https://logesh-portfolio-gamma.vercel.app/"
+                >Portfolio: https://logesh-portfolio-gamma.vercel.app/</a
+              >
             </li>
             <li>
-              Backend built with Node.js, Express, and MongoDB (Mongoose), with
-              bcrypt password hashing and JWT-protected routes.
+              <a href="http://www.linkedin.com/in/logesh-kannan-b9861032a"
+                >LinkedIn: http://www.linkedin.com/in/logesh-kannan-b9861032a</a
+              >
             </li>
             <li>
-              Automated testing on both ends: Vitest and React Testing Library
-              on the frontend; Jest, Supertest, and mongodb-memory-server on the
-              backend.
+              <a href="https://github.com/logeshkannan-hub123/"
+                >GitHub: https://github.com/logeshkannan-hub123/</a
+              >
             </li>
           </ul>
-        </article>
-        <br />
+        </div>
+      </header>
 
-        <article>
-          <h3>Weather App (React)</h3>
-          <ul>
-            <li>
-              React (Vite) application that fetches and displays live weather
-              data for any searched city using geolocation and a weather API.
-            </li>
-            <li>
-              Displays temperature, wind speed, wind direction, and local time,
-              with dedicated loading and error states.
-            </li>
-            <li>
-              Built with reusable components: SearchBar, WeatherCard,
-              LoadingSpinner, and ErrorMessage.
-            </li>
-          </ul>
-        </article>
+      <div class="resume-body">
+        <aside class="sidebar">
+          <section class="side-section">
+            <h3>Education</h3>
+            <ul>
+              <li class="edu-item">
+                <span class="degree"
+                  >MCA — Master of Computer Applications</span
+                >
+                <span class="school"
+                  >Rathinam Technical Campus, Coimbatore</span
+                >
+                <span class="score">72% &middot; 2023 – 2025</span>
+              </li>
+              <li class="edu-item">
+                <span class="degree">B.Sc — Computer Science</span>
+                <span class="school"
+                  >Ayya Nadar Janaki Ammal College, Sivakasi</span
+                >
+                <span class="score">72% &middot; 2020 – 2023</span>
+              </li>
+              <li class="edu-item">
+                <span class="degree">HSC</span>
+                <span class="school"
+                  >Nadar Matriculation Higher Secondary School,
+                  Rajapalayam</span
+                >
+                <span class="score">67% &middot; 2018 – 2020</span>
+              </li>
+              <li class="edu-item">
+                <span class="degree">SSLC</span>
+                <span class="school"
+                  >Sri Vaiyapuri Vidyalaya Matric Higher Secondary School,
+                  Sankarankovil</span
+                >
+                <span class="score">73% &middot; 2017 – 2018</span>
+              </li>
+            </ul>
+          </section>
 
-        <article>
-          <h3>Developer Life Management System (DLMS) — Capstone Project</h3>
-          <ul>
-            <li>
-              A single secure dashboard unifying Tasks, Notes, Bookmarks, Study
-              Progress, and Project Ideas into one full-stack MERN application.
-            </li>
-            <li>
-              Backend: Node.js, Express 5, MongoDB Atlas with Mongoose, JWT +
-              bcrypt authentication, express-validator input validation, and
-              strict per-user data isolation enforced on every query.
-            </li>
-            <li>
-              Frontend: React 19, Vite, React Router v7, and Axios, with a
-              Context API-based auth flow and protected routes.
-            </li>
-            <li>
-              Feature highlights: due-date locking on tasks once set,
-              confirm-before-complete workflow, study progress percentage
-              auto-calculated server-side from subtopic checklists, note
-              pinning, and searchable/filterable bookmarks and project ideas.
-            </li>
-            <li>
-              Fully covered by automated test suites (Jest and Supertest on the
-              backend; Vitest, React Testing Library, and MSW on the frontend)
-              with CI pipelines on both backend and frontend via GitHub Actions.
-            </li>
-          </ul>
-        </article>
+          <section class="side-section">
+            <h3>Technical Skills</h3>
+            <ul class="pill-list">
+              <li class="pill">HTML</li>
+              <li class="pill">CSS</li>
+              <li class="pill">JavaScript (ES6+)</li>
+              <li class="pill">React JS</li>
+              <li class="pill">Node.js</li>
+              <li class="pill">Express JS</li>
+              <li class="pill">MongoDB Atlas</li>
+              <li class="pill">MySQL</li>
+              <li class="pill">JWT</li>
+              <li class="pill">bcrypt</li>
+              <li class="pill">Vite</li>
+              <li class="pill">Jest</li>
+              <li class="pill">Supertest</li>
+              <li class="pill">Vitest</li>
+              <li class="pill">React Testing Library</li>
+              <li class="pill">mongodb-memory-server</li>
+              <li class="pill">Git &amp; GitHub</li>
+              <li class="pill">GitHub Actions (CI/CD)</li>
+            </ul>
+          </section>
 
-        <article>
-          <h3>Quiz Project</h3>
-          <ul>
-            <li>
-              Full-stack quiz application covering both the client-side and
-              server-side of the app.
-            </li>
-            <li>
-              Client side built with HTML, CSS, and JavaScript; backend built
-              with Node.js and Express.js, using MySQL as the database.
-            </li>
-          </ul>
-        </article>
+          <section class="side-section">
+            <h3>Professional Skills</h3>
+            <ul>
+              <li class="skill-item">
+                <span>Team Work</span><span class="meter"></span>
+              </li>
+              <li class="skill-item">
+                <span>Quick Learning</span><span class="meter"></span>
+              </li>
+              <li class="skill-item">
+                <span>Communication</span><span class="meter"></span>
+              </li>
+              <li class="skill-item">
+                <span>Leadership</span><span class="meter"></span>
+              </li>
+            </ul>
+          </section>
 
-        <article>
-          <h3>Shop Expenses Web Page</h3>
-          <ul>
-            <li>
-              Full-stack shop expense management web application with a login
-              page supporting Google and Facebook authentication, alongside
-              standard user login and registration.
-            </li>
-            <li>
-              After login, users reach a home page with Vendor Bills, Data
-              Management, and Logout. Vendor Bills lets users create and view
-              vendor bills; Data Management covers material and vendor records,
-              with view, edit, update, and delete access restricted to admin and
-              manager roles.
-            </li>
-            <li>
-              Backend built with Node.js and Express.js: MySQL fetches data from
-              the client, while MongoDB stores the request/response records.
-            </li>
-          </ul>
-        </article>
-      </section>
-      <hr />
+          <section class="side-section">
+            <h3>Certifications</h3>
+            <ul class="cert-list">
+              <li>ASKEVA WhatsApp API-Based Chatbot Workshop</li>
+              <li>
+                AICTE Program — Heartfulness Education Trust, Kanha Shanti Vanam
+              </li>
+              <li>TCS iON Career Edge — Young Professional</li>
+              <li>India@75 Quiz Contest</li>
+              <li>
+                7th International Conference on Smart Technologies and
+                Innovations in Education and Research (STIER 2025), April 11–12,
+                2025
+              </li>
+            </ul>
+          </section>
 
-      <section>
-        <h2>Skills</h2>
-        <ul>
-          <li>Team Work ⭐⭐⭐⭐</li>
-          <li>Quick Learning ⭐⭐⭐⭐</li>
-          <li>Communication skills ⭐⭐⭐⭐</li>
-          <li>Leadership qualities⭐⭐⭐⭐</li>
-        </ul>
-      </section>
-      <hr />
+          <section class="side-section">
+            <h3>Achievements</h3>
+            <ul class="achieve-list">
+              <li>Completed a 12.5 km marathon</li>
+            </ul>
+          </section>
 
-      <section>
-        <h2>Technical Skills</h2>
-        <ul>
-          <li>HTML, CSS, JavaScript (ES6+)</li>
-          <li>React JS (Hooks, Context API, React Router)</li>
-          <li>Node.js, Express JS</li>
-          <li>MongoDB, Mongoose (MongoDB Atlas)</li>
-          <li>JWT Authentication &amp; bcrypt</li>
-          <li>REST API Design</li>
-          <li>Axios</li>
-          <li>express-validator</li>
-          <li>Vite</li>
-          <li>
-            Testing: Jest, Supertest, Vitest, React Testing Library, MSW,
-            mongodb-memory-server
-          </li>
-          <li>Git, GitHub &amp; GitHub Actions (CI/CD)</li>
-        </ul>
-      </section>
-      <hr />
+          <section class="side-section">
+            <h3>Languages</h3>
+            <ul class="pill-list">
+              <li class="pill">Tamil</li>
+              <li class="pill">English</li>
+            </ul>
+          </section>
 
-      <section>
-        <h2>Achievements</h2>
-        <ul>
-          <li>Finish Marathan(12.5km) .</li>
-        </ul>
-      </section>
-      <hr />
+          <section class="side-section">
+            <h3>Hobbies</h3>
+            <ul class="pill-list">
+              <li class="pill">Cricket</li>
+              <li class="pill">Traveling</li>
+              <li class="pill">Movies</li>
+              <li class="pill">Cycling</li>
+            </ul>
+          </section>
 
-      <section>
-        <h2>Certifications</h2>
-        <ul>
-          <li>ASKEVA WhatsApp API Based Chatbot Workshop.</li>
-          <li>
-            All India Council for Technical Education. (Heartfulness Education
-            Trust in Kanha Shanti Vanam).
-          </li>
-          <li>TCS ION Career Edge-Young Professional.</li>
-          <li>India @75 Quiz Contest.</li>
-          <li>
-            7"International Conference on Smart Technologies and Innovations in
-            Education and Research - (STIER - 2025) held during April 11 &
-            12,2025.
-          </li>
-        </ul>
-      </section>
-      <hr />
+          <section class="side-section">
+            <h3>Address</h3>
+            <ul class="contact-list">
+              <li>
+                204G/10 Railway Feeder Road, Asilapuram,<br />
+                Rajapalayam, Tamil Nadu 626139,<br />
+                India
+              </li>
+            </ul>
+          </section>
+        </aside>
 
-      <section id="other">
-        <h2>Other</h2>
+        <main>
+          <section>
+            <h2>Summary</h2>
+            <p class="summary-text">
+              Full Stack Developer skilled in the MERN stack, focused on
+              building well-tested, secure, and maintainable web applications.
+              Looking to join an organization where I can apply and grow my
+              skills while contributing to team and company success.
+            </p>
+          </section>
 
-        <section>
-          <h3>Languages</h3>
-          <ul>
-            <li>Tamil</li>
-            <li>English</li>
-          </ul>
-        </section>
+          <section class="projects">
+            <h2>Projects</h2>
 
-        <section>
-          <h3>Hobbies</h3>
-          <ul>
-            <li>Playing Cricket.</li>
-            <li>Traveling.</li>
-            <li>Watching Movie.</li>
-            <li>cycling.</li>
-          </ul>
-        </section>
+            <article class="project-card">
+              <h3>Movie Management App (Full-Stack, MERN)</h3>
+              <ul>
+                <li>
+                  Full-stack movie management application with JWT-based
+                  authentication (signup/login), protected routes, and complete
+                  CRUD operations for movies.
+                </li>
+                <li>
+                  Frontend built with React (Vite) and React Router, using
+                  Context API for auth state, reusable components (Navbar,
+                  MovieCard, MovieForm, ConfirmDialog, Loader), and a dedicated
+                  service layer for API calls.
+                </li>
+                <li>
+                  Backend built with Node.js, Express, and MongoDB (Mongoose),
+                  with bcrypt password hashing and JWT-protected routes.
+                </li>
+                <li>
+                  Automated testing on both ends: Vitest and React Testing
+                  Library on the frontend; Jest, Supertest, and
+                  mongodb-memory-server on the backend.
+                </li>
+              </ul>
+            </article>
 
-        <section>
-          <h3>Contact Me</h3>
-          <p>Tel: 6385841491</p>
-          <p>Email: kannanlogeshkannan29@gmail.com</p>
-          <p>Address:</p>
-          <p>
-            204G/10 Railway feeder road,<br />
-            Asilapuram,<br />
-            city:Rajapalayam, <br />
-            Country:India,<br />
-            pincode:626139.<br />
-          </p>
-        </section>
-        <hr />
+            <article class="project-card">
+              <h3>
+                Developer Life Management System (DLMS) — Capstone Project
+              </h3>
+              <ul>
+                <li>
+                  A single secure dashboard unifying Tasks, Notes, Bookmarks,
+                  Study Progress, and Project Ideas into one full-stack MERN
+                  application.
+                </li>
+                <li>
+                  Backend: Node.js, Express 5, MongoDB Atlas with Mongoose, JWT
+                  + bcrypt authentication, express-validator input validation,
+                  and strict per-user data isolation enforced on every query.
+                </li>
+                <li>
+                  Frontend: React 19, Vite, React Router v7, and Axios, with a
+                  Context API-based auth flow and protected routes.
+                </li>
+                <li>
+                  Feature highlights: due-date locking on tasks once set,
+                  confirm-before-complete workflow, study progress percentage
+                  auto-calculated server-side from subtopic checklists, note
+                  pinning, and searchable/filterable bookmarks and project
+                  ideas.
+                </li>
+                <li>
+                  Fully covered by automated test suites (Jest and Supertest on
+                  the backend; Vitest, React Testing Library, and MSW on the
+                  frontend) with CI pipelines on both backend and frontend via
+                  GitHub Actions.
+                </li>
+              </ul>
+            </article>
 
-        <section>
-          <h3>Portfolio</h3>
-          <a href="https://logesh-portfolio-gamma.vercel.app/"
-            >https://logesh-portfolio-gamma.vercel.app/</a
-          >
-          <hr />
+            <article class="project-card">
+              <h3>Weather App (React)</h3>
+              <ul>
+                <li>
+                  React (Vite) application that fetches and displays live
+                  weather data for any searched city using geolocation and a
+                  weather API.
+                </li>
+                <li>
+                  Displays temperature, wind speed, wind direction, and local
+                  time, with dedicated loading and error states.
+                </li>
+                <li>
+                  Built with reusable components: SearchBar, WeatherCard,
+                  LoadingSpinner, and ErrorMessage.
+                </li>
+              </ul>
+            </article>
 
-          <h3>linkedin</h3>
-          <a href="http://www.linkedin.com/in/logesh-kannan-b9861032a">
-            http://www.linkedin.com/in/logesh-kannan-b9861032a</a
-          >
-          <hr />
+            <article class="project-card">
+              <h3>Shop Expenses Web Page</h3>
+              <ul>
+                <li>
+                  Full-stack shop expense management web application with a
+                  login page supporting Google and Facebook authentication,
+                  alongside standard user login and registration.
+                </li>
+                <li>
+                  After login, users reach a home page with Vendor Bills, Data
+                  Management, and Logout. Vendor Bills lets users create and
+                  view vendor bills; Data Management covers material and vendor
+                  records, with view, edit, update, and delete access restricted
+                  to admin and manager roles.
+                </li>
+                <li>
+                  Backend built with Node.js and Express.js: MySQL fetches data
+                  from the client, while MongoDB stores the request/response
+                  records.
+                </li>
+              </ul>
+            </article>
 
-          <h3>github</h3>
-          <a href="https://github.com/logeshkannan-hub123/">
-            https://github.com/logeshkannan-hub123/</a
-          >
-        </section>
-      </section>
-    </main>
+            <article class="project-card">
+              <h3>Quiz Project</h3>
+              <ul>
+                <li>
+                  Full-stack quiz application covering both the client-side and
+                  server-side of the app.
+                </li>
+                <li>
+                  Client side built with HTML, CSS, and JavaScript; backend
+                  built with Node.js and Express.js, using MySQL as the
+                  database.
+                </li>
+              </ul>
+            </article>
+          </section>
+        </main>
+      </div>
 
-    <hr />
-    <footer>
-      <p>© 2025 Logesh Kannan Resume. All Rights Reserved.</p>
-    </footer>
+      <footer>
+        <p>&copy; 2025 Logesh Kannan C. All Rights Reserved.</p>
+      </footer>
+    </div>
   </body>
 </html>
