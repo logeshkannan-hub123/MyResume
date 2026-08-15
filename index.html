@@ -202,24 +202,25 @@
         font-size: 0.87rem;
       }
 
-      .meter {
-        --level: 4;
-        --max: 5;
-        position: relative;
-        width: 72px;
-        height: 7px;
-        border-radius: 4px;
-        background: var(--border);
+      .stars {
+        color: var(--accent);
+        font-size: 0.95rem;
+        letter-spacing: 1px;
         flex-shrink: 0;
       }
 
-      .meter::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        width: calc(var(--level) / var(--max) * 100%);
-        background: var(--accent);
-        border-radius: 4px;
+      .tech-skills-list {
+        column-count: 2;
+        column-gap: 0.75rem;
+        list-style: disc;
+        padding-left: 1rem;
+        margin: 0;
+      }
+
+      .tech-skills-list li {
+        font-size: 0.78rem;
+        margin-bottom: 0.4rem;
+        break-inside: avoid;
       }
 
       .pill-list {
@@ -375,26 +376,16 @@
           <h1>Logesh Kannan C</h1>
           <p class="role">Full Stack Developer</p>
           <ul class="contact-inline">
-            <li>Rajapalayam, Tamil Nadu, India</li>
-            <li><a href="tel:+916385841491">+91 63858 41491</a></li>
+            <li>
+              204G/10 Railway Feeder Road, Asilapuram, Rajapalayam, Tamil Nadu
+              626139, India
+            </li>
+            <li>
+              <a href="tel:+916385841491">Phone Number: +91 63858 41491</a>
+            </li>
             <li>
               <a href="mailto:kannanlogeshkannan29@gmail.com"
-                >kannanlogeshkannan29@gmail.com</a
-              >
-            </li>
-            <li>
-              <a href="https://logesh-portfolio-gamma.vercel.app/"
-                >Portfolio: https://logesh-portfolio-gamma.vercel.app/</a
-              >
-            </li>
-            <li>
-              <a href="http://www.linkedin.com/in/logesh-kannan-b9861032a"
-                >LinkedIn: http://www.linkedin.com/in/logesh-kannan-b9861032a</a
-              >
-            </li>
-            <li>
-              <a href="https://github.com/logeshkannan-hub123/"
-                >GitHub: https://github.com/logeshkannan-hub123/</a
+                >Email: kannanlogeshkannan29@gmail.com</a
               >
             </li>
           </ul>
@@ -442,44 +433,52 @@
           </section>
 
           <section class="side-section">
-            <h3>Technical Skills</h3>
-            <ul class="pill-list">
-              <li class="pill">HTML</li>
-              <li class="pill">CSS</li>
-              <li class="pill">JavaScript (ES6+)</li>
-              <li class="pill">React JS</li>
-              <li class="pill">Node.js</li>
-              <li class="pill">Express JS</li>
-              <li class="pill">MongoDB Atlas</li>
-              <li class="pill">MySQL</li>
-              <li class="pill">JWT</li>
-              <li class="pill">bcrypt</li>
-              <li class="pill">Vite</li>
-              <li class="pill">Jest</li>
-              <li class="pill">Supertest</li>
-              <li class="pill">Vitest</li>
-              <li class="pill">React Testing Library</li>
-              <li class="pill">mongodb-memory-server</li>
-              <li class="pill">Git &amp; GitHub</li>
-              <li class="pill">GitHub Actions (CI/CD)</li>
+            <h3>Professional Skills</h3>
+            <ul>
+              <li class="skill-item">
+                <span>Team Work</span><span class="stars">★★★★</span>
+              </li>
+              <li class="skill-item">
+                <span>Quick Learning</span><span class="stars">★★★★</span>
+              </li>
+              <li class="skill-item">
+                <span>Communication</span><span class="stars">★★★★</span>
+              </li>
+              <li class="skill-item">
+                <span>Leadership</span><span class="stars">★★★★</span>
+              </li>
             </ul>
           </section>
 
           <section class="side-section">
-            <h3>Professional Skills</h3>
-            <ul>
-              <li class="skill-item">
-                <span>Team Work</span><span class="meter"></span>
-              </li>
-              <li class="skill-item">
-                <span>Quick Learning</span><span class="meter"></span>
-              </li>
-              <li class="skill-item">
-                <span>Communication</span><span class="meter"></span>
-              </li>
-              <li class="skill-item">
-                <span>Leadership</span><span class="meter"></span>
-              </li>
+            <h3>Languages</h3>
+            <ul class="pill-list">
+              <li class="pill">Tamil</li>
+              <li class="pill">English</li>
+            </ul>
+          </section>
+
+          <section class="side-section">
+            <h3>Technical Skills</h3>
+            <ul class="tech-skills-list">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript (ES6+)</li>
+              <li>React JS</li>
+              <li>Node.js</li>
+              <li>Express JS</li>
+              <li>MongoDB Atlas</li>
+              <li>MySQL</li>
+              <li>JWT</li>
+              <li>bcrypt</li>
+              <li>Vite</li>
+              <li>Jest</li>
+              <li>Supertest</li>
+              <li>Vitest</li>
+              <li>React Testing Library</li>
+              <li>mongodb-memory-server</li>
+              <li>Git &amp; GitHub</li>
+              <li>GitHub Actions (CI/CD)</li>
             </ul>
           </section>
 
@@ -501,37 +500,23 @@
           </section>
 
           <section class="side-section">
-            <h3>Achievements</h3>
-            <ul class="achieve-list">
-              <li>Completed a 12.5 km marathon</li>
-            </ul>
-          </section>
-
-          <section class="side-section">
-            <h3>Languages</h3>
-            <ul class="pill-list">
-              <li class="pill">Tamil</li>
-              <li class="pill">English</li>
-            </ul>
-          </section>
-
-          <section class="side-section">
-            <h3>Hobbies</h3>
-            <ul class="pill-list">
-              <li class="pill">Cricket</li>
-              <li class="pill">Traveling</li>
-              <li class="pill">Movies</li>
-              <li class="pill">Cycling</li>
-            </ul>
-          </section>
-
-          <section class="side-section">
-            <h3>Address</h3>
-            <ul class="contact-list">
+            <h3>Links</h3>
+            <ul class="link-list">
               <li>
-                204G/10 Railway Feeder Road, Asilapuram,<br />
-                Rajapalayam, Tamil Nadu 626139,<br />
-                India
+                <a href="https://logesh-portfolio-gamma.vercel.app/"
+                  >Portfolio: https://logesh-portfolio-gamma.vercel.app/</a
+                >
+              </li>
+              <li>
+                <a href="http://www.linkedin.com/in/logesh-kannan-b9861032a"
+                  >LinkedIn:
+                  http://www.linkedin.com/in/logesh-kannan-b9861032a</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/logeshkannan-hub123/"
+                  >GitHub: https://github.com/logeshkannan-hub123/</a
+                >
               </li>
             </ul>
           </section>
@@ -578,9 +563,7 @@
             </article>
 
             <article class="project-card">
-              <h3>
-                Developer Life Management System (DLMS) — Capstone Project
-              </h3>
+              <h3>Developer Life Management System (DLMS)</h3>
               <ul>
                 <li>
                   A single secure dashboard unifying Tasks, Notes, Bookmarks,
@@ -597,13 +580,6 @@
                   Context API-based auth flow and protected routes.
                 </li>
                 <li>
-                  Feature highlights: due-date locking on tasks once set,
-                  confirm-before-complete workflow, study progress percentage
-                  auto-calculated server-side from subtopic checklists, note
-                  pinning, and searchable/filterable bookmarks and project
-                  ideas.
-                </li>
-                <li>
                   Fully covered by automated test suites (Jest and Supertest on
                   the backend; Vitest, React Testing Library, and MSW on the
                   frontend) with CI pipelines on both backend and frontend via
@@ -618,11 +594,8 @@
                 <li>
                   React (Vite) application that fetches and displays live
                   weather data for any searched city using geolocation and a
-                  weather API.
-                </li>
-                <li>
-                  Displays temperature, wind speed, wind direction, and local
-                  time, with dedicated loading and error states.
+                  weather API.Displays temperature, wind speed, wind direction,
+                  and local time, with dedicated loading and error states.
                 </li>
                 <li>
                   Built with reusable components: SearchBar, WeatherCard,
@@ -650,21 +623,6 @@
                   Backend built with Node.js and Express.js: MySQL fetches data
                   from the client, while MongoDB stores the request/response
                   records.
-                </li>
-              </ul>
-            </article>
-
-            <article class="project-card">
-              <h3>Quiz Project</h3>
-              <ul>
-                <li>
-                  Full-stack quiz application covering both the client-side and
-                  server-side of the app.
-                </li>
-                <li>
-                  Client side built with HTML, CSS, and JavaScript; backend
-                  built with Node.js and Express.js, using MySQL as the
-                  database.
                 </li>
               </ul>
             </article>
