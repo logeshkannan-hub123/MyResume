@@ -464,6 +464,7 @@
               <li>HTML</li>
               <li>CSS</li>
               <li>JavaScript (ES6+)</li>
+              <li>TypeScript</li>
               <li>React JS</li>
               <li>Node.js</li>
               <li>Express JS</li>
@@ -537,32 +538,6 @@
             <h2>Projects</h2>
 
             <article class="project-card">
-              <h3>Movie Management App (Full-Stack, MERN)</h3>
-              <ul>
-                <li>
-                  Full-stack movie management application with JWT-based
-                  authentication (signup/login), protected routes, and complete
-                  CRUD operations for movies.
-                </li>
-                <li>
-                  Frontend built with React (Vite) and React Router, using
-                  Context API for auth state, reusable components (Navbar,
-                  MovieCard, MovieForm, ConfirmDialog, Loader), and a dedicated
-                  service layer for API calls.
-                </li>
-                <li>
-                  Backend built with Node.js, Express, and MongoDB (Mongoose),
-                  with bcrypt password hashing and JWT-protected routes.
-                </li>
-                <li>
-                  Automated testing on both ends: Vitest and React Testing
-                  Library on the frontend; Jest, Supertest, and
-                  mongodb-memory-server on the backend.
-                </li>
-              </ul>
-            </article>
-
-            <article class="project-card">
               <h3>Developer Life Management System (DLMS)</h3>
               <ul>
                 <li>
@@ -589,17 +564,44 @@
             </article>
 
             <article class="project-card">
-              <h3>Weather App (React)</h3>
+              <h3>Movie Management App (Full-Stack, MERN)</h3>
               <ul>
                 <li>
-                  React (Vite) application that fetches and displays live
-                  weather data for any searched city using geolocation and a
-                  weather API.Displays temperature, wind speed, wind direction,
-                  and local time, with dedicated loading and error states.
+                  Full-stack movie management app with JWT authentication
+                  (signup/login), protected routes, and complete CRUD for
+                  movies.
                 </li>
                 <li>
-                  Built with reusable components: SearchBar, WeatherCard,
-                  LoadingSpinner, and ErrorMessage.
+                  Frontend: React (Vite) and React Router with reusable
+                  components (MovieCard, MovieForm, ConfirmDialog) and a
+                  dedicated API service layer.
+                </li>
+                <li>
+                  Backend: Node.js, Express, and MongoDB/Mongoose with bcrypt
+                  password hashing; tested end-to-end with Jest, Supertest,
+                  Vitest, and React Testing Library.
+                </li>
+              </ul>
+            </article>
+
+            <article class="project-card">
+              <h3>Hotel Today's Specials — Digital Menu System</h3>
+              <ul>
+                <li>
+                  Multi-app hotel system: an admin dashboard to manage daily
+                  specials and a separate full-screen digital menu board for
+                  customers, both powered by one shared REST API and database.
+                </li>
+                <li>
+                  Backend: Node.js, Express, and TypeScript with MongoDB and
+                  Mongoose, full CRUD for dishes, request validation, and a
+                  bcrypt-based first-run admin login (no separate registration
+                  step).
+                </li>
+                <li>
+                  Frontend: React admin dashboard with image/video uploads and
+                  client-side MIME-type detection; a separate React display app
+                  auto-cycles active specials with live polling for updates.
                 </li>
               </ul>
             </article>
