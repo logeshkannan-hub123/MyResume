@@ -445,32 +445,6 @@
           </section>
 
           <section class="side-section">
-            <h3>Professional Skills</h3>
-            <ul>
-              <li class="skill-item">
-                <span>Team Work</span><span class="stars">★★★★</span>
-              </li>
-              <li class="skill-item">
-                <span>Quick Learning</span><span class="stars">★★★★</span>
-              </li>
-              <li class="skill-item">
-                <span>Communication</span><span class="stars">★★★★</span>
-              </li>
-              <li class="skill-item">
-                <span>Leadership</span><span class="stars">★★★★</span>
-              </li>
-            </ul>
-          </section>
-
-          <section class="side-section">
-            <h3>Languages</h3>
-            <ul class="pill-list">
-              <li class="pill">Tamil</li>
-              <li class="pill">English</li>
-            </ul>
-          </section>
-
-          <section class="side-section">
             <h3>Technical Skills</h3>
             <ul class="tech-skills-list">
               <li>HTML</li>
@@ -498,6 +472,14 @@
           <section class="side-section">
             <h3>Certifications</h3>
             <ul class="cert-list">
+              <li>
+                Full Stack Web Development — Puthu Trend Institute (6-month
+                program course, completed 28 February 2026)
+              </li>
+              <li>
+                Applied AI for Web Development — Puthu Trend Institute (1-month
+                program course, completed 31 July 2026)
+              </li>
               <li>ASKEVA WhatsApp API-Based Chatbot Workshop</li>
               <li>
                 AICTE Program — Heartfulness Education Trust, Kanha Shanti Vanam
@@ -509,14 +491,32 @@
                 Innovations in Education and Research (STIER 2025), April 11–12,
                 2025
               </li>
-              <li>
-                Full Stack Web Development — Puthu Trend Institute (6-month
-                program course, completed 28 February 2026)
+            </ul>
+          </section>
+
+          <section class="side-section">
+            <h3>Professional Skills</h3>
+            <ul>
+              <li class="skill-item">
+                <span>Team Work</span><span class="stars">★★★★</span>
               </li>
-              <li>
-                Applied AI for Web Development — Puthu Trend Institute (1-month
-                program course, completed 31 July 2026)
+              <li class="skill-item">
+                <span>Quick Learning</span><span class="stars">★★★★</span>
               </li>
+              <li class="skill-item">
+                <span>Communication</span><span class="stars">★★★★</span>
+              </li>
+              <li class="skill-item">
+                <span>Leadership</span><span class="stars">★★★★</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="side-section">
+            <h3>Languages</h3>
+            <ul class="pill-list">
+              <li class="pill">Tamil</li>
+              <li class="pill">English</li>
             </ul>
           </section>
         </aside>
@@ -623,6 +623,39 @@
                   Backend built with Node.js and Express.js: MySQL fetches data
                   from the client, while MongoDB stores the request/response
                   records.
+                </li>
+              </ul>
+            </article>
+
+            <article class="project-card">
+              <h3>Clinic Billing System</h3>
+              <ul>
+                <li>
+                  A full-stack billing and administration system for small
+                  clinics, with role-based access for admins (account and
+                  inventory management) and receptionists (billing and
+                  payments), built as an npm-workspaces monorepo.
+                </li>
+                <li>
+                  Backend: Node.js, Express, MongoDB with Mongoose,
+                  session-based authentication (express-session + connect-mongo)
+                  with bcrypt password hashing, server-side bill total
+                  computation with cross-field schema validation, and a 24-event
+                  audit logging system.
+                </li>
+                <li>
+                  Frontend: React 19, TypeScript, Vite, TanStack Query, and
+                  React Router, with idempotency-key protected bill submission
+                  and printable receipt layouts for A4, A5, and thermal
+                  (80mm/58mm) formats.
+                </li>
+                <li>
+                  Covered by co-located automated test suites across models,
+                  services, routes, and middleware on the backend (Vitest +
+                  Supertest + mongodb-memory-server) and components/pages on the
+                  frontend (Vitest + React Testing Library), with
+                  request-rate-limited auth endpoints and session-version based
+                  revocation for security-critical actions.
                 </li>
               </ul>
             </article>
